@@ -1,2 +1,5 @@
 title: Shivani's Blog
 theme: minima
+
+paginate: 1
+paginate_path: "/page/:num/"
