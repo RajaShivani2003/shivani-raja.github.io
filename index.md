@@ -1,7 +1,24 @@
 ---
-layout: home
+layout: page
 title: My Blog
 ---
 
-Welcome to my blog 👋  
-I am learning and sharing step by step 😊
+{% for post in paginator.posts %}
+### [{{ post.title }}]({{ post.url }})
+
+{{ post.excerpt }}
+---
+
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<nav>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">← Previous</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">Next →</a>
+  {% endif %}
+</nav>
+{% endif %}
